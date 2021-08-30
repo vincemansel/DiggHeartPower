@@ -15,6 +15,7 @@
 		AF90925E26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF90925C26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld */; };
 		AF90926926DCC11F00B7CAE0 /* HRM_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90926826DCC11F00B7CAE0 /* HRM_SwiftUITests.swift */; };
 		AF90927426DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90927326DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift */; };
+		AF90928226DCC79100B7CAE0 /* HRM_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928126DCC79100B7CAE0 /* HRM_View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AF90926F26DCC11F00B7CAE0 /* HRM_SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HRM_SwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF90927326DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_SwiftUIUITests.swift; sourceTree = "<group>"; };
 		AF90927526DCC11F00B7CAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF90928126DCC79100B7CAE0 /* HRM_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				AF90925126DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift */,
+				AF90928126DCC79100B7CAE0 /* HRM_View.swift */,
 				AF90925326DCC11D00B7CAE0 /* ContentView.swift */,
 				AF90925526DCC11F00B7CAE0 /* Assets.xcassets */,
 				AF90925A26DCC11F00B7CAE0 /* Persistence.swift */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF90928226DCC79100B7CAE0 /* HRM_View.swift in Sources */,
 				AF90925B26DCC11F00B7CAE0 /* Persistence.swift in Sources */,
 				AF90925E26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld in Sources */,
 				AF90925426DCC11D00B7CAE0 /* ContentView.swift in Sources */,
