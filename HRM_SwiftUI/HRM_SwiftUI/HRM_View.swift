@@ -8,70 +8,88 @@
 import SwiftUI
 
 struct HRM_View: View {
-    var body: some View {
+  
+  @State private var statusPickerOption: StatusPickerOptions = .hrm
+  
+  var body: some View {
+    
+    VStack {
+      Text("DIGG Heart Rate Monitor")
+        .font(.title)
+        .foregroundColor(.blue)
+      
+      Divider()
+      
+      HStack {
+        
         VStack {
-            Text("DIGG Heart Rate Monitor")
-                .font(.title)
-                .foregroundColor(.blue)
-            
-            Divider()
-            
-            HStack {
-                
-                VStack {
-                    Text("Heart Rate")
-                    Text("----")
-                }
-                .padding()
-                .frame( maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, idealHeight: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
-                Spacer()
-                
-                Divider()
-                
-                VStack {
-                    Text("Body Location")
-                    Text("----")
-                }
-                .padding()
-                .frame( maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, idealHeight: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            }
-            .frame(height: 200)
-            
-            VStack {
-                Text("Status")
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15.0)
-                        .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                        .padding()
-                        .foregroundColor(.green)
-                    
-                    Text("Scrollable status")
-                        .italic()
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                }
-            }
-
-            
-            Spacer()
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 15.0)
-                    .padding()
-                    .foregroundColor(.green)
-
-                Text("Line Graph: HR vs. Time")
-                    .italic()
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                
-            }
+          Text("Heart Rate")
+          Text("164")
+            .font(.system(size: 56.0))
         }
+        .padding()
+        .frame( maxWidth: .infinity, idealHeight: 200)
+        
+        Spacer()
+        
+        Divider()
+        
+        VStack {
+          Text("Body Location")
+          Text("Wrist")
+            .font(.system(size: 50))
+        }
+        .padding()
+        .frame( maxWidth: .infinity, idealHeight: 200)
+      }
+      .frame(height: 100)
+      
+      VStack (spacing: -0.0){
+        Button(action: {
+          print("Clear")
+        }) {
+          RoundedRectangle(cornerRadius: 10).frame(width: 100, height: 60).overlay(Text("Clear").foregroundColor(.white))
+        }
+        .padding()
+        
+        Text("Status")
+        
+        VStack (spacing: -8.0) {
+          
+          StatusPickerView(statusPickerOption: $statusPickerOption)
+            .padding([.leading, .trailing])
+          
+          ZStack {
+            RoundedRectangle(cornerRadius: 15.0)
+              .frame(height: 100)
+              .padding()
+              .foregroundColor(.orange)
+            
+            Text("Scrollable status")
+              .italic()
+              .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+          }
+        }
+      }
+      
+      Spacer()
+      
+      ZStack {
+        RoundedRectangle(cornerRadius: 15.0)
+          .padding()
+          .foregroundColor(.green)
+        
+        Text("Line Graph: HR vs. Time")
+          .italic()
+          .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+        
+      }
     }
+  }
 }
 
 struct HRM_View_Previews: PreviewProvider {
-    static var previews: some View {
-        HRM_View()
-    }
+  static var previews: some View {
+    HRM_View()
+  }
 }
