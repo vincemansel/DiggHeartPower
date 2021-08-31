@@ -181,21 +181,73 @@ struct HeartRateChartsView: View {
 // MARK: -
 struct ControlButtonsView: View {
   @EnvironmentObject var interface: CBInterface
-
+  
+  @State private var alreadyStoppedAlert: Bool = false
+  
   var body: some View {
     HStack {
+      Spacer()
+
       Button(action: {
-        print("Reset")
-        interface.reset()
-        interface.heartRateData.removeAll()
+        print("Play")
+        interface.play()
       }) {
         RoundedRectangle(cornerRadius: cornerRadius)
           .frame(width: frameWidth, height: frameHeight)
-          .overlay(Text("Reset")
+          .overlay(Image(systemName: "play.fill")
                     .foregroundColor(.white))
       }
-      .padding()
+      .foregroundColor(.green)
+
+      Spacer()
+      
+      Button(action: {
+        print("Pause")
+        interface.pause()
+      }) {
+        RoundedRectangle(cornerRadius: cornerRadius)
+          .frame(width: frameWidth, height: frameHeight)
+          .overlay(Image(systemName: "pause.fill")
+                    .foregroundColor(.white))
+      }
+      .foregroundColor(.blue)
+
+      Spacer()
+
+      Button(action: {
+        print("Stop")
+        
+        if interface.alreadyStopped {
+          alreadyStoppedAlert = true
+        }
+        else {
+          interface.stop()
+          interface.alreadyStopped = true
+        }
+      }) {
+        RoundedRectangle(cornerRadius: cornerRadius)
+          .frame(width: frameWidth, height: frameHeight)
+          .overlay(Image(systemName: "stop.fill")
+                    .foregroundColor(.white))
+      }
+      .foregroundColor(.red)
+      .alert(isPresented: $alreadyStoppedAlert, content: {
+        Alert(title: Text("Already Stopped"),
+              message: Text("OK to Delete..."),
+              primaryButton: .default(Text("Cancel")),
+              secondaryButton: .destructive(Text("Delete"), action: {
+                deleteWorkoutData()
+              }))
+      })
+        
+      Spacer()
     }
+  }
+  
+  private func deleteWorkoutData() {
+    interface.reset()
+    interface.heartRateData.removeAll()
+    interface.alreadyStopped = false
   }
   
   // MARK: - Constants

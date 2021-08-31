@@ -20,6 +20,8 @@ class CBInterface: ObservableObject {
   @Published var heartRateData: [Float] = []
   @Published var heartRateZoneData: [Float] = [1.0,1.0,1.0,1.0,1.0]
   
+  var alreadyStopped: Bool = false
+
   init() {
     manager = CoreBluetoothManager()
     manager.client = self
@@ -33,8 +35,26 @@ class CBInterface: ObservableObject {
     manager.changeSelection(to: selection)
   }
   
+  func play() {
+    manager.play()
+  }
+  
+  func pause() {
+    manager.pause()
+  }
+  
+  func stop() {
+    manager.stop()
+  }
+  
   func reset() {
     manager.reset()
+    resetAllData()
+  }
+  
+  private func resetAllData() {
+    heartRateData = []
+    heartRateZoneData = [1.0,1.0,1.0,1.0,1.0]
   }
 }
 

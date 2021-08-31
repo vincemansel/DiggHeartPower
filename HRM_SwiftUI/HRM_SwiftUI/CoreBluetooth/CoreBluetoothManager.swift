@@ -23,6 +23,13 @@ let bodySensorLocationCharacteristicCBUUID = CBUUID(string: "0x2A38")
 
 let startingStatusText = "Ready"
 
+enum CBHRManagerState {
+  case initial
+  case running
+  case paused
+  case stopped
+}
+
 @objc protocol CoreBluetoothManagerClient {
   func updateStatus(_ statusString: String)
   func onBodySensorLocationReceived(_ bodyLocation: String)
@@ -39,43 +46,75 @@ class CoreBluetoothManager: NSObject {
   
   private var discoveryCount = 0
   private var statusSelectionForHRM = true
-
-  override init() {
-    super.init()
-    centralManager = CBCentralManager(delegate: self, queue: nil)
+  
+  private var managerState: CBHRManagerState = .initial {
+    didSet {
+      switch managerState {
+        case .initial:
+          statusText = startingStatusText
+          updateStatus()
+        case .running:
+          initializeScan()
+          centralManager = CBCentralManager(delegate: self, queue: nil)
+        case .paused:
+          break
+        case .stopped:
+          if centralManager != nil {
+            centralManager.stopScan()
+          }
+          
+          if heartRatePeripheral != nil {
+            centralManager.cancelPeripheralConnection(heartRatePeripheral)
+          }
+          heartRatePeripheral = nil
+      }
+    }
   }
   
   // MARK: Intents
   
   func changeSelection(to selection: StatusPickerOptions) {
     statusSelectionForHRM = selection == .hrm
-    centralManager.stopScan()
 
-    if statusSelectionForHRM {
-      updateStatus("\nHRM Selected")
+    if ![CBHRManagerState.running, CBHRManagerState.paused].contains(managerState) {
+      if statusSelectionForHRM {
+        updateStatus("\nHRM Selected")
+      }
+      else {
+        updateStatus("\nAll Devices Selected")
+      }
+      
+      updateStatus("\n****** NEW SCAN *******\n")
+      initializeScan()
     }
-    else {
-      updateStatus("\nAll Devices Selected")
-    }
-    
-    updateStatus("\n****** NEW SCAN *******\n")
-    initializeScan()
+  }
+  
+  func play() {
+    managerState = .running
+  }
+  
+  func pause() {
+    managerState = .paused
+  }
+  
+  func stop() {
+    managerState = .stopped
   }
   
   func reset() {
-    statusText = startingStatusText
-    updateStatus()
-    
-    initializeScan()
+    managerState = .initial
   }
   
   private func initializeScan() {
-    centralManager.stopScan()
-    centralManager.cancelPeripheralConnection(heartRatePeripheral)
+    if centralManager != nil {
+      centralManager.stopScan()
+    }
+    if heartRatePeripheral != nil {
+      centralManager.cancelPeripheralConnection(heartRatePeripheral)
+      heartRatePeripheral = nil
+    }
     client.onHeartRateReceived(heartRateReceivedDefault)
     client.onBodySensorLocationReceived(bodySensorLocationDefault)
-    
-    startScan()
   }
 }
 
