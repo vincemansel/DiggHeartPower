@@ -8,11 +8,14 @@
 import Combine
 import CoreBluetooth
 
+let bodySensorLocationDefault = "-----"
+let heartRateReceivedDefault = 0
+
 class CBInterface: ObservableObject {
   @Published private var manager: CoreBluetoothManager
   @Published var statusText: String = ""
-  @Published private(set) var bodySensorLocation:String = "-----"
-  @Published private(set) var heartRateReceived: Int = 0
+  @Published private(set) var bodySensorLocation:String = bodySensorLocationDefault
+  @Published private(set) var heartRateReceived: Int = heartRateReceivedDefault
   
   init() {
     manager = CoreBluetoothManager()
@@ -25,6 +28,10 @@ class CBInterface: ObservableObject {
   
   func changeSelection(to selection: StatusPickerOptions) {
     manager.changeSelection(to: selection)
+  }
+  
+  func reset() {
+    manager.reset()
   }
 }
 

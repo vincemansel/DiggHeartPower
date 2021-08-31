@@ -21,6 +21,7 @@ let heartRateMeasurementCharacteristicCBUUID = CBUUID(string: "0x2A37")
 /// GATT Characteristic and Object Type 0x2A38 Body Sensor Location
 let bodySensorLocationCharacteristicCBUUID = CBUUID(string: "0x2A38")
 
+let startingStatusText = "Ready"
 
 @objc protocol CoreBluetoothManagerClient {
   func updateStatus(_ statusString: String)
@@ -34,7 +35,7 @@ class CoreBluetoothManager: NSObject {
   
   weak var client: CoreBluetoothManagerClient!
 
-  private(set) var statusText: String = "Ready"
+  private(set) var statusText: String = startingStatusText
   
   private var discoveryCount = 0
   private var statusSelectionForHRM = true
@@ -44,6 +45,8 @@ class CoreBluetoothManager: NSObject {
     centralManager = CBCentralManager(delegate: self, queue: nil)
   }
   
+  // MARK: Intents
+  
   func changeSelection(to selection: StatusPickerOptions) {
     statusSelectionForHRM = selection == .hrm
     centralManager.stopScan()
@@ -52,11 +55,26 @@ class CoreBluetoothManager: NSObject {
       updateStatus("\nHRM Selected")
     }
     else {
-      centralManager.cancelPeripheralConnection(heartRatePeripheral)
       updateStatus("\nAll Devices Selected")
     }
     
     updateStatus("\n****** NEW SCAN *******\n")
+    initializeScan()
+  }
+  
+  func reset() {
+    statusText = startingStatusText
+    updateStatus()
+    
+    initializeScan()
+  }
+  
+  private func initializeScan() {
+    centralManager.stopScan()
+    centralManager.cancelPeripheralConnection(heartRatePeripheral)
+    client.onHeartRateReceived(heartRateReceivedDefault)
+    client.onBodySensorLocationReceived(bodySensorLocationDefault)
+    
     startScan()
   }
 }
@@ -65,7 +83,7 @@ class CoreBluetoothManager: NSObject {
 // MARK: extension CoreBluetoothManager (Utilities)
 
 extension CoreBluetoothManager {
-  fileprivate func updateStatus(_ status: String) {
+  fileprivate func updateStatus(_ status: String = "") {
     statusText = statusText + "\n" + status
     client.updateStatus(statusText)
     print(status)

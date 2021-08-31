@@ -48,9 +48,13 @@ struct HRM_View: View {
       
       VStack (spacing: 0.0){
         Button(action: {
-          print("Clear")
+          print("Reset")
+          interface.reset()
         }) {
-          RoundedRectangle(cornerRadius: 10).frame(width: 100, height: 60).overlay(Text("Clear").foregroundColor(.white))
+          RoundedRectangle(cornerRadius: 10)
+            .frame(width: 100, height: 60)
+            .overlay(Text("Reset")
+                      .foregroundColor(.white))
         }
         .padding()
         
