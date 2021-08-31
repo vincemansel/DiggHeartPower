@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		AF90928826DE05F900B7CAE0 /* CoreBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928726DE05F900B7CAE0 /* CoreBluetoothManager.swift */; };
 		AF90928A26DE0CF500B7CAE0 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */; };
 		AF90928C26DE2A9C00B7CAE0 /* CBInteface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928B26DE2A9C00B7CAE0 /* CBInteface.swift */; };
+		AF90928F26DE633800B7CAE0 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = AF90928E26DE633800B7CAE0 /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF90928F26DE633800B7CAE0 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +185,9 @@
 			dependencies = (
 			);
 			name = HRM_SwiftUI;
+			packageProductDependencies = (
+				AF90928E26DE633800B7CAE0 /* Charts */,
+			);
 			productName = HRM_SwiftUI;
 			productReference = AF90924E26DCC11D00B7CAE0 /* HRM_SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +259,9 @@
 				Base,
 			);
 			mainGroup = AF90924526DCC11D00B7CAE0;
+			packageReferences = (
+				AF90928D26DE633800B7CAE0 /* XCRemoteSwiftPackageReference "swiftui-charts" */,
+			);
 			productRefGroup = AF90924F26DCC11D00B7CAE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -624,6 +632,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF90928D26DE633800B7CAE0 /* XCRemoteSwiftPackageReference "swiftui-charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vincemansel/swiftui-charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF90928E26DE633800B7CAE0 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF90928D26DE633800B7CAE0 /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AF90925C26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld */ = {
