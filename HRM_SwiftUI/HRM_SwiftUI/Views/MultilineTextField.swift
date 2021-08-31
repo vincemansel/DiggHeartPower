@@ -18,6 +18,7 @@ struct MultilineTextField: UIViewRepresentable {
     
     @Binding var text: String
     var backgroundColor: UIColor
+    var isEditable: Bool
     
     func makeUIView(context: Context) -> UITextView {
         let view = UITextView()
@@ -25,7 +26,7 @@ struct MultilineTextField: UIViewRepresentable {
         view.font = UIFont.systemFont(ofSize: 15)
         view.backgroundColor = backgroundColor
         view.isScrollEnabled = true
-        view.isEditable = true
+        view.isEditable = isEditable
         view.isUserInteractionEnabled = true
         view.text = text
         view.delegate = context.coordinator

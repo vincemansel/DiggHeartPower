@@ -60,7 +60,8 @@ struct HRM_View: View {
             .padding([.leading, .trailing])
           
           MultilineTextField(text: $interface.statusText,
-                             backgroundColor: UIColor.orange)
+                             backgroundColor: UIColor.orange,
+                             isEditable: false)
             .font(.headline)
             .border(Color.gray)
             .frame(height: 110)
