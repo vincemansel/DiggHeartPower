@@ -34,7 +34,6 @@ struct HRM_View: View {
   
   // MARK: Constants
   static let secondsPerMinute:Float = 60.0
-  
 }
 
 struct HRM_View_Previews: PreviewProvider {
@@ -43,45 +42,47 @@ struct HRM_View_Previews: PreviewProvider {
   }
 }
 
+// MARK: -
 struct HeartRateParameterView: View {
   @EnvironmentObject var interface: CBInterface
   
   var body: some View {
     HStack {
-      
       VStack {
         Text("Heart Rate")
         Text(String(interface.heartRateReceived))
-          .font(.system(size: 56.0))
+          .font(.system(size: heartRateTextFontSize))
       }
       .padding()
-      .frame( maxWidth: .infinity, idealHeight: 200)
-      
-      Spacer()
-      
-      Divider()
+      .frame( maxWidth: .infinity)
       
       VStack {
         Text("Body Location")
         Text(interface.bodySensorLocation)
-          .font(.system(size: 50))
+          .font(.system(size: bodyLocationTextFontSize))
       }
       .padding()
-      .frame( maxWidth: .infinity, idealHeight: 200)
+      .frame(maxWidth: .infinity)
     }
-    .frame(height: 100)
+    .frame(height: parameterFrameHeight)
   }
+  
+  // MARK: - Constants
+  let heartRateTextFontSize: CGFloat = 56.0
+  let bodyLocationTextFontSize: CGFloat = 50.0
+  let parameterFrameHeight: CGFloat = 100
 }
 
+// MARK: -
 struct StatusSelectionView: View {
   @EnvironmentObject var interface: CBInterface
   @Binding var statusPickerOption: StatusPickerOptions
   
   var body: some View {
-    VStack (spacing: 0.0) {
+    VStack (spacing: outerVStackSpacing) {
       Text("Status")
       
-      VStack (spacing: -8.0) {
+      VStack (spacing: innerVStackSpacing) {
         
         StatusPickerView(statusPickerOption: $statusPickerOption)
           .padding([.leading, .trailing])
@@ -100,20 +101,24 @@ struct StatusSelectionView: View {
       }
     }
   }
+  
+  // MARK: - Constants
+  let outerVStackSpacing: CGFloat = 0.0
+  let innerVStackSpacing: CGFloat = -8
 }
 
+// MARK: -
 struct HeartRateChartsView: View {
   @EnvironmentObject var interface: CBInterface
   @Binding var hrZoneBinDivisor: Float
 
   var body: some View {
-    VStack(spacing: -2) {
-      
+    VStack(spacing: outerVStackSpacing) {
       Text("Charts")
       
-      VStack(spacing: -30){
+      VStack(spacing: innerVStackSpacing){
         ZStack {
-          RoundedRectangle(cornerRadius: 15.0)
+          RoundedRectangle(cornerRadius: backgroundCornerRadius)
             .padding()
             .foregroundColor(.green)
           
@@ -124,15 +129,15 @@ struct HeartRateChartsView: View {
           // TODO: - This is a basic line graph of the running heart rate.
           // No legend or numerical values
           // TODO: Note the value is a fraction resulting in FP number.
-          Chart(data: interface.heartRateData.map  { $0/255.0 })
+          Chart(data: interface.heartRateData.map  { $0/maxHeartRate })
             .chartStyle(
-              LineChartStyle(.quadCurve, lineColor: .blue, lineWidth: 2)
+              LineChartStyle(.quadCurve, lineColor: .blue, lineWidth: lineCharLineWidth)
             )
             .padding()
         }
         
         ZStack {
-          RoundedRectangle(cornerRadius: 15.0)
+          RoundedRectangle(cornerRadius: backgroundCornerRadius)
             .padding()
             .foregroundColor(.blue)
           
@@ -142,7 +147,7 @@ struct HeartRateChartsView: View {
           
           Chart(data: interface.heartRateZoneData.reversed().map { $0/hrZoneBinDivisor})
             .chartStyle(
-              ColumnChartStyle(column: Rectangle().foregroundColor(.red).opacity(0.7), spacing: 5)
+              ColumnChartStyle(column: Rectangle().foregroundColor(.red).opacity(columnChartBinOpacity), spacing: columnChartBinSpacing)
             )
             .padding()
             .padding()
@@ -162,8 +167,18 @@ struct HeartRateChartsView: View {
       hrZoneBinDivisor *= 2
     }
   }
+  
+  // MARK: - Constants
+  let outerVStackSpacing: CGFloat = -2
+  let innerVStackSpacing: CGFloat = -30
+  let maxHeartRate: Float = 255.0
+  let lineCharLineWidth:CGFloat = 2
+  let backgroundCornerRadius: CGFloat = 15.0
+  let columnChartBinOpacity: Double = 0.7
+  let columnChartBinSpacing: CGFloat = 5.0
 }
 
+// MARK: -
 struct ControlButtonsView: View {
   @EnvironmentObject var interface: CBInterface
 
@@ -174,12 +189,17 @@ struct ControlButtonsView: View {
         interface.reset()
         interface.heartRateData.removeAll()
       }) {
-        RoundedRectangle(cornerRadius: 10)
-          .frame(width: 100, height: 60)
+        RoundedRectangle(cornerRadius: cornerRadius)
+          .frame(width: frameWidth, height: frameHeight)
           .overlay(Text("Reset")
                     .foregroundColor(.white))
       }
       .padding()
     }
   }
+  
+  // MARK: - Constants
+  let cornerRadius: CGFloat = 10.0
+  let frameWidth: CGFloat = 100.0
+  let frameHeight: CGFloat = 60.0
 }
