@@ -169,13 +169,13 @@ extension CoreBluetoothManager: CBPeripheralDelegate {
     
     switch characteristic.uuid {
       case bodySensorLocationCharacteristicCBUUID:
-                
         let bodySensorLocationString = bodyLocation(from: characteristic)
         updateStatus(bodySensorLocationString)
         client.onBodySensorLocationReceived(bodySensorLocationString)
         
       case heartRateMeasurementCharacteristicCBUUID:
         let bpm = heartRate(from: characteristic)
+        updateStatus(String(bpm))
         client.onHeartRateReceived(bpm)
         
       default:

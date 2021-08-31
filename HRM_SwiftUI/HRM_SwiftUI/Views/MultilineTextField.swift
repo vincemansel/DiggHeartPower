@@ -30,11 +30,20 @@ struct MultilineTextField: UIViewRepresentable {
         view.isUserInteractionEnabled = true
         view.text = text
         view.delegate = context.coordinator
+      
+        view.layoutManager.allowsNonContiguousLayout = false
+
         return view
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
         uiView.text = text
+        textViewScrollToBottom(uiView)
+    }
+  
+    private func textViewScrollToBottom(_ uiView: UITextView) {
+      let stringLength:Int = uiView.attributedText.string.count
+      uiView.scrollRangeToVisible(NSMakeRange(stringLength-1, 0))
     }
     
     func makeCoordinator() -> Coordinator {
