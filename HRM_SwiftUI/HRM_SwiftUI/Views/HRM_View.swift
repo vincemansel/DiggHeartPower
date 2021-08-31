@@ -24,9 +24,9 @@ struct HRM_View: View {
       
       Group {
         HeartRateParameterView()
-        ControlButtonsView()
         StatusSelectionView(statusPickerOption: $statusPickerOption)
         HeartRateChartsView(hrZoneBinDivisor: $hrZoneBinDivisor)
+        ControlButtonsView()
       }
       .environmentObject(interface)
     }
