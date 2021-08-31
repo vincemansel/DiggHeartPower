@@ -24,7 +24,7 @@ struct HRM_View: View {
         
         VStack {
           Text("Heart Rate")
-          Text("164")
+          Text(String(interface.heartRateReceived))
             .font(.system(size: 56.0))
         }
         .padding()

@@ -8,30 +8,24 @@
 import Combine
 import CoreBluetooth
 
-class CBInterface: ObservableObject {
-  
-  @Published var statusPickerOption: StatusPickerOptions = .hrm
-  @Published private var manager: CoreBluetoothManager
-  @Published var statusText: String = ""
+// MARK: -
+// MARK: ASSIGNED NUMBERS
+// MARK: https://www.bluetooth.com/specifications/assigned-numbers/
 
-  init() {
-    manager = CoreBluetoothManager()
-    manager.client = self
-  }
-  
-  // MARK: Access to Manager
-  
-}
+/// GATT Service 0x180D Heart Rate
+let heartRateServiceCBUUID = CBUUID(string: "0x180D")
 
-extension CBInterface: CoreBluetoothManagerClient {
-  func updateStatus(_ statusString: String) {
-    statusText = statusString
-  }
-}
+/// GATT Characteristic and Object Type 0x2A37 Heart Rate Measurement
+let heartRateMeasurementCharacteristicCBUUID = CBUUID(string: "0x2A37")
+
+/// GATT Characteristic and Object Type 0x2A38 Body Sensor Location
+let bodySensorLocationCharacteristicCBUUID = CBUUID(string: "0x2A38")
+
 
 @objc protocol CoreBluetoothManagerClient {
   func updateStatus(_ statusString: String)
-  func updateBodySensorLocation(_ bodyLocation: String)
+  func onBodySensorLocationReceived(_ bodyLocation: String)
+  func onHeartRateReceived(_ bpm: Int)
 }
 
 class CoreBluetoothManager: NSObject {
@@ -41,7 +35,6 @@ class CoreBluetoothManager: NSObject {
   weak var client: CoreBluetoothManagerClient!
 
   private(set) var statusText: String = "Ready"
-  private(set) var heartRateReceived: Int = 0
   
   private var discoveryCount = 0
   private var statusSelectionForHRM = true
@@ -172,24 +165,18 @@ extension CoreBluetoothManager: CBPeripheralDelegate {
   
   func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
 
-    /*
-    #if DEBUG
-    updateStatus("didUpdateValueFor: \(characteristic.uuid): ")
-    
-    guard let value = characteristic.value else {
-      updateStatus("no value")
-      return
-    }
-    updateStatus(value.description)
-    #endif
- */
+    debugCharacteristicFlow(for: characteristic)
     
     switch characteristic.uuid {
       case bodySensorLocationCharacteristicCBUUID:
                 
         let bodySensorLocationString = bodyLocation(from: characteristic)
         updateStatus(bodySensorLocationString)
-        client.updateBodySensorLocation(bodySensorLocationString)
+        client.onBodySensorLocationReceived(bodySensorLocationString)
+        
+      case heartRateMeasurementCharacteristicCBUUID:
+        let bpm = heartRate(from: characteristic)
+        client.onHeartRateReceived(bpm)
         
       default:
         print("Unhandled Characteristic UUID: \(characteristic.uuid)")
@@ -211,5 +198,34 @@ extension CoreBluetoothManager: CBPeripheralDelegate {
       default:
         return "Reserved for future use"
     }
+  }
+  
+  private func heartRate(from characteristic: CBCharacteristic) -> Int {
+    guard let characteristicData = characteristic.value else { return -1 }
+    
+    let byteArray = [UInt8](characteristicData)
+
+    let firstBitValue = byteArray[0] & 0x01
+    if firstBitValue == 0 {
+      // Heart Rate Value Format is in the 2nd byte
+      return Int(byteArray[1])
+    } else {
+      // Heart Rate Value Format is in the 2nd and 3rd bytes
+      return (Int(byteArray[1]) << 8) + Int(byteArray[2])
+    }
+  }
+  
+  private func debugCharacteristicFlow(for characteristic: CBCharacteristic) {
+/*
+        #if DEBUG
+        updateStatus("didUpdateValueFor: \(characteristic.uuid): ")
+        
+        guard let value = characteristic.value else {
+          updateStatus("no value")
+          return
+        }
+        updateStatus(value.description)
+        #endif
+*/
   }
 }

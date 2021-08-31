@@ -14,6 +14,7 @@ class CBInterface: ObservableObject {
   @Published private var manager: CoreBluetoothManager
   @Published var statusText: String = ""
   @Published private(set) var bodySensorLocation: String = "-----"
+  @Published private(set) var heartRateReceived: Int = 0
 
   init() {
     manager = CoreBluetoothManager()
@@ -29,7 +30,11 @@ extension CBInterface: CoreBluetoothManagerClient {
     statusText = statusString
   }
   
-  func updateBodySensorLocation(_ bodyLocation: String) {
+  func onBodySensorLocationReceived(_ bodyLocation: String) {
     bodySensorLocation = bodyLocation
+  }
+  
+  func onHeartRateReceived(_ bpm: Int) {
+    heartRateReceived = bpm
   }
 }
