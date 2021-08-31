@@ -13,8 +13,8 @@ struct HRM_View: View {
   @ObservedObject var interface: CBInterface = CBInterface()
   
   @State private var statusPickerOption: StatusPickerOptions = .hrm
-  @State private var heartRateData: [Float] = []
-    
+  @State private var hrZoneBinDivisor: Float = secondsPerMinute
+  
   var body: some View {
     
     VStack {
@@ -52,7 +52,7 @@ struct HRM_View: View {
         Button(action: {
           print("Reset")
           interface.reset()
-          heartRateData.removeAll()
+          interface.heartRateData.removeAll()
         }) {
           RoundedRectangle(cornerRadius: 10)
             .frame(width: 100, height: 60)
@@ -82,7 +82,7 @@ struct HRM_View: View {
         }
       }
       
-      VStack(spacing: -10) {
+      VStack(spacing: -2) {
         
         Text("Charts")
         
@@ -92,9 +92,14 @@ struct HRM_View: View {
               .padding()
               .foregroundColor(.green)
             
+            Text("HR vs. Time")
+              .italic()
+              .foregroundColor(.yellow)
+            
             // TODO: - This is a basic line graph of the running heart rate.
-            // No legend or numerica values
-            Chart(data: heartRateData)
+            // No legend or numerical values
+            // TODO: Note the value is a fraction resulting in FP number.
+            Chart(data: interface.heartRateData.map  { $0/255.0 })
                 .chartStyle(
                     LineChartStyle(.quadCurve, lineColor: .blue, lineWidth: 2)
                 )
@@ -104,20 +109,39 @@ struct HRM_View: View {
           ZStack {
             RoundedRectangle(cornerRadius: 15.0)
               .padding()
-              .foregroundColor(.purple)
+              .foregroundColor(.blue)
             
-            Text("Bar Chart: HR Zones")
+            Text("HR Zones")
               .italic()
               .foregroundColor(.yellow)
+            
+            Chart(data: interface.heartRateZoneData.reversed().map { $0/hrZoneBinDivisor})
+                .chartStyle(
+                  ColumnChartStyle(column: Rectangle().foregroundColor(.red).opacity(0.7), spacing: 5)
+                )
+              .padding()
+              .padding()
+          }
+          // This enables a bin to grow to hrZoneBinDivisor points before
+          // resizing
+          .onReceive(interface.$heartRateZoneData) {
+            resizeColumnHeightIfNeeded(data: $0)
           }
         }
-        .onReceive(interface.$heartRateReceived, perform: {
-          // TODO: Note the value is a fraction resulting in FP number.
-          heartRateData.append(Float($0)/200.0)
-        })
       }
     }
   }
+  
+  private func resizeColumnHeightIfNeeded(data: [Float]) {
+    let maxBin = data.filter { $0 > hrZoneBinDivisor }
+    if let maxZoneCount = maxBin.first, maxZoneCount >= hrZoneBinDivisor {
+      hrZoneBinDivisor *= 2
+    }
+  }
+  
+  // MARK: Constants
+  static let secondsPerMinute:Float = 60.0
+  
 }
 
 struct HRM_View_Previews: PreviewProvider {
