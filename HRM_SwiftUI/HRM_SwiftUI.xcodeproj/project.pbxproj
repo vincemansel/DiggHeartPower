@@ -17,6 +17,8 @@
 		AF90927426DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90927326DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift */; };
 		AF90928226DCC79100B7CAE0 /* HRM_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928126DCC79100B7CAE0 /* HRM_View.swift */; };
 		AF90928426DE02B000B7CAE0 /* StatusPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928326DE02B000B7CAE0 /* StatusPickerView.swift */; };
+		AF90928826DE05F900B7CAE0 /* CoreBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928726DE05F900B7CAE0 /* CoreBluetoothManager.swift */; };
+		AF90928A26DE0CF500B7CAE0 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		AF90927526DCC11F00B7CAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF90928126DCC79100B7CAE0 /* HRM_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_View.swift; sourceTree = "<group>"; };
 		AF90928326DE02B000B7CAE0 /* StatusPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPickerView.swift; sourceTree = "<group>"; };
+		AF90928726DE05F900B7CAE0 /* CoreBluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothManager.swift; sourceTree = "<group>"; };
+		AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				AF90925126DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift */,
-				AF90928126DCC79100B7CAE0 /* HRM_View.swift */,
-				AF90928326DE02B000B7CAE0 /* StatusPickerView.swift */,
+				AF90928626DE059D00B7CAE0 /* CoreBluetooth */,
+				AF90928526DE059000B7CAE0 /* Views */,
 				AF90925326DCC11D00B7CAE0 /* ContentView.swift */,
 				AF90925526DCC11F00B7CAE0 /* Assets.xcassets */,
 				AF90925A26DCC11F00B7CAE0 /* Persistence.swift */,
@@ -140,6 +144,24 @@
 				AF90927526DCC11F00B7CAE0 /* Info.plist */,
 			);
 			path = HRM_SwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		AF90928526DE059000B7CAE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF90928126DCC79100B7CAE0 /* HRM_View.swift */,
+				AF90928326DE02B000B7CAE0 /* StatusPickerView.swift */,
+				AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF90928626DE059D00B7CAE0 /* CoreBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				AF90928726DE05F900B7CAE0 /* CoreBluetoothManager.swift */,
+			);
+			path = CoreBluetooth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,8 +295,10 @@
 			files = (
 				AF90928426DE02B000B7CAE0 /* StatusPickerView.swift in Sources */,
 				AF90928226DCC79100B7CAE0 /* HRM_View.swift in Sources */,
+				AF90928A26DE0CF500B7CAE0 /* MultilineTextField.swift in Sources */,
 				AF90925B26DCC11F00B7CAE0 /* Persistence.swift in Sources */,
 				AF90925E26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld in Sources */,
+				AF90928826DE05F900B7CAE0 /* CoreBluetoothManager.swift in Sources */,
 				AF90925426DCC11D00B7CAE0 /* ContentView.swift in Sources */,
 				AF90925226DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift in Sources */,
 			);

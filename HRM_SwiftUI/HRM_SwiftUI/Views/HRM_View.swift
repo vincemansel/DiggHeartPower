@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HRM_View: View {
   
-  @State private var statusPickerOption: StatusPickerOptions = .hrm
+  @ObservedObject var interface: CoreBlueInterface = CoreBlueInterface()
+  
+  @State private var statusText: String = ""
   
   var body: some View {
     
@@ -56,23 +58,20 @@ struct HRM_View: View {
         
         VStack (spacing: -8.0) {
           
-          StatusPickerView(statusPickerOption: $statusPickerOption)
+          StatusPickerView(statusPickerOption: $interface.statusPickerOption)
             .padding([.leading, .trailing])
           
-          ZStack {
-            RoundedRectangle(cornerRadius: 15.0)
-              .frame(height: 100)
-              .padding()
-              .foregroundColor(.orange)
-            
-            Text("Scrollable status")
-              .italic()
-              .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-          }
+          MultilineTextField(text: $statusText,
+                             backgroundColor: UIColor.orange)
+            .font(.headline)
+            .border(Color.gray)
+            .frame(height: 110)
+            .background(Color.orange)
+            .padding()
         }
       }
       
-      Spacer()
+      //Spacer()
       
       ZStack {
         RoundedRectangle(cornerRadius: 15.0)
