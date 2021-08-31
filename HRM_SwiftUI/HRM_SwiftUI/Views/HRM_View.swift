@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Charts
 
 struct HRM_View: View {
   
   @ObservedObject var interface: CBInterface = CBInterface()
   
   @State private var statusPickerOption: StatusPickerOptions = .hrm
+  @State private var heartRateData: [Float] = []
     
   var body: some View {
     
@@ -89,9 +91,13 @@ struct HRM_View: View {
               .padding()
               .foregroundColor(.green)
             
-            Text("Line Graph: HR vs. Time")
-              .italic()
-              .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            // TODO: - This is a basic line graph of the running heart rate.
+            // No legend or numerica values
+            Chart(data: heartRateData)
+                .chartStyle(
+                    LineChartStyle(.quadCurve, lineColor: .blue, lineWidth: 2)
+                )
+              .padding()
           }
           
           ZStack {
@@ -104,6 +110,10 @@ struct HRM_View: View {
               .foregroundColor(.yellow)
           }
         }
+        .onReceive(interface.$heartRateReceived, perform: {
+          // TODO: Note the value is a fraction resulting in FP number.
+          heartRateData.append(Float($0)/200.0)
+        })
       }
     }
   }
