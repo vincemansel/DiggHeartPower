@@ -52,6 +52,7 @@ struct HRM_View: View {
         Button(action: {
           print("Reset")
           interface.reset()
+          heartRateData.removeAll()
         }) {
           RoundedRectangle(cornerRadius: 10)
             .frame(width: 100, height: 60)
