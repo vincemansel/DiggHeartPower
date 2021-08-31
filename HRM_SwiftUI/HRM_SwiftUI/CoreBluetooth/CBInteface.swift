@@ -9,13 +9,11 @@ import Combine
 import CoreBluetooth
 
 class CBInterface: ObservableObject {
-  
-  @Published var statusPickerOption: StatusPickerOptions = .hrm
   @Published private var manager: CoreBluetoothManager
   @Published var statusText: String = ""
-  @Published private(set) var bodySensorLocation: String = "-----"
+  @Published private(set) var bodySensorLocation:String = "-----"
   @Published private(set) var heartRateReceived: Int = 0
-
+  
   init() {
     manager = CoreBluetoothManager()
     manager.client = self
@@ -23,6 +21,11 @@ class CBInterface: ObservableObject {
   
   // MARK: Access to Manager
   
+  // MARK: - Intent(s)
+  
+  func changeSelection(to selection: StatusPickerOptions) {
+    manager.changeSelection(to: selection)
+  }
 }
 
 extension CBInterface: CoreBluetoothManagerClient {

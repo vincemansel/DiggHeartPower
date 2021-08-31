@@ -10,6 +10,8 @@ import SwiftUI
 struct HRM_View: View {
   
   @ObservedObject var interface: CBInterface = CBInterface()
+  
+  @State private var statusPickerOption: StatusPickerOptions = .hrm
     
   var body: some View {
     
@@ -56,8 +58,11 @@ struct HRM_View: View {
         
         VStack (spacing: -8.0) {
           
-          StatusPickerView(statusPickerOption: $interface.statusPickerOption)
+          StatusPickerView(statusPickerOption: $statusPickerOption)
             .padding([.leading, .trailing])
+            .onChange(of: statusPickerOption) {
+              interface.changeSelection(to: $0)
+            }
           
           MultilineTextField(text: $interface.statusText,
                              backgroundColor: UIColor.orange,

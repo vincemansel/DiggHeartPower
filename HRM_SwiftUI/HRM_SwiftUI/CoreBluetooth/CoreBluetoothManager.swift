@@ -43,6 +43,22 @@ class CoreBluetoothManager: NSObject {
     super.init()
     centralManager = CBCentralManager(delegate: self, queue: nil)
   }
+  
+  func changeSelection(to selection: StatusPickerOptions) {
+    statusSelectionForHRM = selection == .hrm
+    centralManager.stopScan()
+
+    if statusSelectionForHRM {
+      updateStatus("\nHRM Selected")
+    }
+    else {
+      centralManager.cancelPeripheralConnection(heartRatePeripheral)
+      updateStatus("\nAll Devices Selected")
+    }
+    
+    updateStatus("\n****** NEW SCAN *******\n")
+    startScan()
+  }
 }
 
 // MARK: -
