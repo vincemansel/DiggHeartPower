@@ -19,6 +19,7 @@
 		AF90928426DE02B000B7CAE0 /* StatusPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928326DE02B000B7CAE0 /* StatusPickerView.swift */; };
 		AF90928826DE05F900B7CAE0 /* CoreBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928726DE05F900B7CAE0 /* CoreBluetoothManager.swift */; };
 		AF90928A26DE0CF500B7CAE0 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */; };
+		AF90928C26DE2A9C00B7CAE0 /* CBInteface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928B26DE2A9C00B7CAE0 /* CBInteface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		AF90928326DE02B000B7CAE0 /* StatusPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPickerView.swift; sourceTree = "<group>"; };
 		AF90928726DE05F900B7CAE0 /* CoreBluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothManager.swift; sourceTree = "<group>"; };
 		AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
+		AF90928B26DE2A9C00B7CAE0 /* CBInteface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBInteface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		AF90928626DE059D00B7CAE0 /* CoreBluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				AF90928B26DE2A9C00B7CAE0 /* CBInteface.swift */,
 				AF90928726DE05F900B7CAE0 /* CoreBluetoothManager.swift */,
 			);
 			path = CoreBluetooth;
@@ -301,6 +304,7 @@
 				AF90928826DE05F900B7CAE0 /* CoreBluetoothManager.swift in Sources */,
 				AF90925426DCC11D00B7CAE0 /* ContentView.swift in Sources */,
 				AF90925226DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift in Sources */,
+				AF90928C26DE2A9C00B7CAE0 /* CBInteface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

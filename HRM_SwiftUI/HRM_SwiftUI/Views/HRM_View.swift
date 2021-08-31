@@ -36,7 +36,7 @@ struct HRM_View: View {
         
         VStack {
           Text("Body Location")
-          Text("Wrist")
+          Text(interface.bodySensorLocation)
             .font(.system(size: 50))
         }
         .padding()
@@ -68,9 +68,7 @@ struct HRM_View: View {
             .padding()
         }
       }
-      
-      //Spacer()
-      
+            
       ZStack {
         RoundedRectangle(cornerRadius: 15.0)
           .padding()
