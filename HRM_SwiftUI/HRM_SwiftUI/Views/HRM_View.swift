@@ -73,21 +73,37 @@ struct HRM_View: View {
                              isEditable: false)
             .font(.headline)
             .border(Color.gray)
-            .frame(height: 110)
+            .frame(height: 80)
             .background(Color.orange)
             .padding()
         }
       }
+      
+      VStack(spacing: -10) {
+        
+        Text("Charts")
+        
+        VStack(spacing: -30){
+          ZStack {
+            RoundedRectangle(cornerRadius: 15.0)
+              .padding()
+              .foregroundColor(.green)
             
-      ZStack {
-        RoundedRectangle(cornerRadius: 15.0)
-          .padding()
-          .foregroundColor(.green)
-        
-        Text("Line Graph: HR vs. Time")
-          .italic()
-          .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-        
+            Text("Line Graph: HR vs. Time")
+              .italic()
+              .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+          }
+          
+          ZStack {
+            RoundedRectangle(cornerRadius: 15.0)
+              .padding()
+              .foregroundColor(.purple)
+            
+            Text("Bar Chart: HR Zones")
+              .italic()
+              .foregroundColor(.yellow)
+          }
+        }
       }
     }
   }

@@ -110,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				AF90925126DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift */,
-				AF90928626DE059D00B7CAE0 /* CoreBluetooth */,
 				AF90928526DE059000B7CAE0 /* Views */,
+				AF90928626DE059D00B7CAE0 /* CoreBluetooth */,
 				AF90925326DCC11D00B7CAE0 /* ContentView.swift */,
 				AF90925526DCC11F00B7CAE0 /* Assets.xcassets */,
 				AF90925A26DCC11F00B7CAE0 /* Persistence.swift */,
