@@ -8,18 +8,38 @@
 import Combine
 import CoreBluetooth
 
-class CoreBlueInterface: ObservableObject {
+class CBInterface: ObservableObject {
   
   @Published var statusPickerOption: StatusPickerOptions = .hrm
-  @Published var heartRateReceived: Int = 0
+  @Published private var manager: CoreBluetoothManager
+  @Published var statusText: String = ""
+
+  init() {
+    manager = CoreBluetoothManager()
+    manager.client = self
+  }
   
-  var manager = CoreBluetoothManager()
+  // MARK: Access to Manager
+  
+}
+
+extension CBInterface: CoreBluetoothManagerClient {
+  func updateStatus(_ statusString: String) {
+    statusText = statusString
+  }
+}
+
+@objc protocol CoreBluetoothManagerClient {
+  func updateStatus(_ statusString: String)
 }
 
 class CoreBluetoothManager: NSObject {
   var centralManager: CBCentralManager!
+  
+  weak var client: CoreBluetoothManagerClient!
 
-  var statusText: String = ""
+  private(set) var statusText: String = "Ready"
+  private(set) var heartRateReceived: Int = 0
 
   override init() {
     super.init()
@@ -31,13 +51,11 @@ class CoreBluetoothManager: NSObject {
 // MARK: extension CoreBluetoothManager (Utilities)
 
 extension CoreBluetoothManager {
-
   fileprivate func updateStatus(_ status: String) {
     statusText = statusText + "\n" + status
-    //statusTextView.text = String(statusText)
+    client.updateStatus(statusText)
     print(status)
   }
-  
 }
 
 // MARK: -
@@ -62,6 +80,5 @@ extension CoreBluetoothManager: CBCentralManagerDelegate {
       @unknown default:
         fatalError()
     }
-
   }
 }

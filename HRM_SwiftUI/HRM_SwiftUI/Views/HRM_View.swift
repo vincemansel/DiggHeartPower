@@ -9,10 +9,8 @@ import SwiftUI
 
 struct HRM_View: View {
   
-  @ObservedObject var interface: CoreBlueInterface = CoreBlueInterface()
-  
-  @State private var statusText: String = ""
-  
+  @ObservedObject var interface: CBInterface = CBInterface()
+    
   var body: some View {
     
     VStack {
@@ -46,7 +44,7 @@ struct HRM_View: View {
       }
       .frame(height: 100)
       
-      VStack (spacing: -0.0){
+      VStack (spacing: 0.0){
         Button(action: {
           print("Clear")
         }) {
@@ -61,7 +59,7 @@ struct HRM_View: View {
           StatusPickerView(statusPickerOption: $interface.statusPickerOption)
             .padding([.leading, .trailing])
           
-          MultilineTextField(text: $statusText,
+          MultilineTextField(text: $interface.statusText,
                              backgroundColor: UIColor.orange)
             .font(.headline)
             .border(Color.gray)
