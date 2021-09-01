@@ -10,12 +10,11 @@ import Charts
 
 // Reference: https://github.com/spacenation/swiftui-charts
 
-fileprivate let backgroundCornerRadius: CGFloat = 15.0
+fileprivate let backgroundCornerRadius: CGFloat = 5.0
 
 struct HRZonesBarGraphView: View {
   @EnvironmentObject var interface: CBInterface
   @Binding var hrZoneBinDivisor: Float
-
 
   var body: some View {
     ZStack {
@@ -29,13 +28,22 @@ struct HRZonesBarGraphView: View {
       
       Chart(data: interface.heartRateZoneData.reversed().map { $0/hrZoneBinDivisor})
         .chartStyle(
-          ColumnChartStyle(column: Rectangle().foregroundColor(.red).opacity(columnChartBinOpacity), spacing: columnChartBinSpacing)
+          ColumnChartStyle(column: Rectangle().foregroundColor(.red).opacity(columnChartBinOpacity),
+                           spacing: columnChartBinSpacing)
         )
         .padding()
         .padding()
+      
+      HStack (spacing: 13.5) {
+        ForEach(interface.heartRateZoneData, id: \.self) { zoneData in
+          Text(timeInZone(zoneData))
+            .font(Font.system(size: 10, design: .monospaced).monospacedDigit())
+        }
+      }
+      .offset(x: 0, y: 40)
+      
     }
-    // This enables a bin to grow to hrZoneBinDivisor points before
-    // resizing
+    // This enables a bin to grow to hrZoneBinDivisor points before resizing
     .onReceive(interface.$heartRateZoneData) {
       resizeColumnHeightIfNeeded(data: $0)
     }
@@ -46,6 +54,22 @@ struct HRZonesBarGraphView: View {
     if let maxZoneCount = maxBin.first, maxZoneCount >= hrZoneBinDivisor {
       hrZoneBinDivisor *= 2
     }
+  }
+  
+  private func timeInZone(_ zoneData: Float) -> String {
+    // convert float x.y to 0:00:00 format
+    // TODO: Assume hrTicks per second - need timer (seconds)
+    let adjustedZoneData = (zoneData - 1.0)/2.0
+    let formatter = DateComponentsFormatter()
+    formatter.zeroFormattingBehavior = .pad
+    formatter.unitsStyle = .positional
+    formatter.allowedUnits = [.hour, .minute, .second]
+    
+    if let timeFormattedString = formatter.string(from: Double(adjustedZoneData)) {
+      return timeFormattedString
+    }
+    
+    return ""
   }
   
   // MARK: - Constants
@@ -71,7 +95,9 @@ struct HRvsTimeGraphView: View {
       // TODO: Note the value is a fraction resulting in FP number.
       Chart(data: interface.heartRateData.map  { $0/maxHeartRate })
         .chartStyle(
-          LineChartStyle(.quadCurve, lineColor: .blue, lineWidth: lineChartLineWidth)
+          LineChartStyle(.quadCurve,
+                         lineColor: .blue,
+                         lineWidth: lineChartLineWidth)
         )
         .padding()
     }
