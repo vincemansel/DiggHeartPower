@@ -20,7 +20,11 @@ class CBInterface: ObservableObject {
   @Published var heartRateData: [Float] = []
   @Published var heartRateZoneData: [Float] = [1.0,1.0,1.0,1.0,1.0]
   
-  var alreadyStopped: Bool = false
+  var alreadyStopped: Bool {
+    get {
+      manager.managerState == .stopped
+    }
+  }
 
   init() {
     manager = CoreBluetoothManager()

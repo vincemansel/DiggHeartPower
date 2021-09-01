@@ -47,7 +47,7 @@ class CoreBluetoothManager: NSObject {
   private var discoveryCount = 0
   private var statusSelectionForHRM = true
   
-  private var managerState: CBHRManagerState = .initial {
+  private(set) var managerState: CBHRManagerState = .initial {
     didSet {
       switch managerState {
         case .initial:

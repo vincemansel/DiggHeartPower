@@ -222,7 +222,6 @@ struct ControlButtonsView: View {
         }
         else {
           interface.stop()
-          interface.alreadyStopped = true
         }
       }) {
         RoundedRectangle(cornerRadius: cornerRadius)
@@ -247,7 +246,6 @@ struct ControlButtonsView: View {
   private func deleteWorkoutData() {
     interface.reset()
     interface.heartRateData.removeAll()
-    interface.alreadyStopped = false
   }
   
   // MARK: - Constants
