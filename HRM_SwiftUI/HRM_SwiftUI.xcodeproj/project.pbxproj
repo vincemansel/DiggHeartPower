@@ -21,6 +21,7 @@
 		AF90928A26DE0CF500B7CAE0 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */; };
 		AF90928C26DE2A9C00B7CAE0 /* CBInteface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928B26DE2A9C00B7CAE0 /* CBInteface.swift */; };
 		AF90928F26DE633800B7CAE0 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = AF90928E26DE633800B7CAE0 /* Charts */; };
+		AF90929126DF320F00B7CAE0 /* HRGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90929026DF320E00B7CAE0 /* HRGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		AF90928726DE05F900B7CAE0 /* CoreBluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothManager.swift; sourceTree = "<group>"; };
 		AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 		AF90928B26DE2A9C00B7CAE0 /* CBInteface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBInteface.swift; sourceTree = "<group>"; };
+		AF90929026DF320E00B7CAE0 /* HRGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				AF90928126DCC79100B7CAE0 /* HRM_View.swift */,
 				AF90928326DE02B000B7CAE0 /* StatusPickerView.swift */,
 				AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */,
+				AF90929026DF320E00B7CAE0 /* HRGraphView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				AF90928A26DE0CF500B7CAE0 /* MultilineTextField.swift in Sources */,
 				AF90925B26DCC11F00B7CAE0 /* Persistence.swift in Sources */,
 				AF90925E26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld in Sources */,
+				AF90929126DF320F00B7CAE0 /* HRGraphView.swift in Sources */,
 				AF90928826DE05F900B7CAE0 /* CoreBluetoothManager.swift in Sources */,
 				AF90925426DCC11D00B7CAE0 /* ContentView.swift in Sources */,
 				AF90925226DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift in Sources */,

@@ -26,7 +26,6 @@ let startingStatusText = "Ready"
 enum CBHRManagerState {
   case initial
   case running
-//  case paused
   case stopped
 }
 
@@ -56,8 +55,6 @@ class CoreBluetoothManager: NSObject {
         case .running:
           initializeScan()
           centralManager = CBCentralManager(delegate: self, queue: nil)
-//        case .paused:
-//          break
         case .stopped:
           if centralManager != nil {
             centralManager.stopScan()
@@ -94,12 +91,6 @@ class CoreBluetoothManager: NSObject {
       managerState = .running
     }
   }
-  
-//  func pause() {
-//    if managerState == .running {
-//      managerState = .paused
-//    }
-//  }
   
   func stop() {
     managerState = .stopped

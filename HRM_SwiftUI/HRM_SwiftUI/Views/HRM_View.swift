@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Charts
 
 struct HRM_View: View {
   @ObservedObject var interface: CBInterface = CBInterface()
@@ -116,66 +115,19 @@ struct HeartRateChartsView: View {
     VStack(spacing: outerVStackSpacing) {
       Text("Charts")
       
-      VStack(spacing: innerVStackSpacing){
-        ZStack {
-          RoundedRectangle(cornerRadius: backgroundCornerRadius)
-            .padding()
-            .foregroundColor(.green)
-          
-          Text("HR vs. Time")
-            .italic()
-            .foregroundColor(.yellow)
-          
-          // TODO: - This is a basic line graph of the running heart rate.
-          // No legend or numerical values
-          // TODO: Note the value is a fraction resulting in FP number.
-          Chart(data: interface.heartRateData.map  { $0/maxHeartRate })
-            .chartStyle(
-              LineChartStyle(.quadCurve, lineColor: .blue, lineWidth: lineCharLineWidth)
-            )
-            .padding()
+      VStack(spacing: innerVStackSpacing) {
+        Group {
+          HRvsTimeGraphView()
+          HRZonesBarGraphView(hrZoneBinDivisor: $hrZoneBinDivisor)
         }
-        
-        ZStack {
-          RoundedRectangle(cornerRadius: backgroundCornerRadius)
-            .padding()
-            .foregroundColor(.blue)
-          
-          Text("HR Zones")
-            .italic()
-            .foregroundColor(.yellow)
-          
-          Chart(data: interface.heartRateZoneData.reversed().map { $0/hrZoneBinDivisor})
-            .chartStyle(
-              ColumnChartStyle(column: Rectangle().foregroundColor(.red).opacity(columnChartBinOpacity), spacing: columnChartBinSpacing)
-            )
-            .padding()
-            .padding()
-        }
-        // This enables a bin to grow to hrZoneBinDivisor points before
-        // resizing
-        .onReceive(interface.$heartRateZoneData) {
-          resizeColumnHeightIfNeeded(data: $0)
-        }
+        .environmentObject(interface)
       }
     }
   }
-  
-  private func resizeColumnHeightIfNeeded(data: [Float]) {
-    let maxBin = data.filter { $0 > hrZoneBinDivisor }
-    if let maxZoneCount = maxBin.first, maxZoneCount >= hrZoneBinDivisor {
-      hrZoneBinDivisor *= 2
-    }
-  }
-  
+
   // MARK: - Constants
   let outerVStackSpacing: CGFloat = -2
   let innerVStackSpacing: CGFloat = -30
-  let maxHeartRate: Float = 255.0
-  let lineCharLineWidth:CGFloat = 2
-  let backgroundCornerRadius: CGFloat = 15.0
-  let columnChartBinOpacity: Double = 0.7
-  let columnChartBinSpacing: CGFloat = 5.0
 }
 
 // MARK: -
@@ -198,19 +150,6 @@ struct ControlButtonsView: View {
                     .foregroundColor(.white))
       }
       .foregroundColor(.green)
-
-//      Spacer()
-//      
-//      Button(action: {
-//        print("Pause")
-//        interface.pause()
-//      }) {
-//        RoundedRectangle(cornerRadius: cornerRadius)
-//          .frame(width: frameWidth, height: frameHeight)
-//          .overlay(Image(systemName: "pause.fill")
-//                    .foregroundColor(.white))
-//      }
-//      .foregroundColor(.blue)
 
       Spacer()
 

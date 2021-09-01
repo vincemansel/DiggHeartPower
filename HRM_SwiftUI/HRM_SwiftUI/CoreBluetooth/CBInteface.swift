@@ -43,10 +43,6 @@ class CBInterface: ObservableObject {
     manager.play()
   }
   
-//  func pause() {
-//    manager.pause()
-//  }
-  
   func stop() {
     manager.stop()
   }
