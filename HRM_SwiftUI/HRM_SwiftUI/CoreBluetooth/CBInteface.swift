@@ -59,6 +59,8 @@ class CBInterface: ObservableObject {
   private func resetAllData() {
     heartRateData = []
     heartRateZoneData = [1.0,1.0,1.0,1.0,1.0]
+    bodySensorLocation = bodySensorLocationDefault
+    heartRateReceived = heartRateReceivedDefault
   }
 }
 

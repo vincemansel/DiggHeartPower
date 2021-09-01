@@ -232,7 +232,7 @@ struct ControlButtonsView: View {
       .foregroundColor(.red)
       .alert(isPresented: $alreadyStoppedAlert, content: {
         Alert(title: Text("Already Stopped"),
-              message: Text("OK to Delete..."),
+              message: Text("OK to Delete?"),
               primaryButton: .default(Text("Cancel")),
               secondaryButton: .destructive(Text("Delete"), action: {
                 deleteWorkoutData()
