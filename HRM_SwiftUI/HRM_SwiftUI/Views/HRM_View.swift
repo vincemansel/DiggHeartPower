@@ -199,18 +199,18 @@ struct ControlButtonsView: View {
       }
       .foregroundColor(.green)
 
-      Spacer()
-      
-      Button(action: {
-        print("Pause")
-        interface.pause()
-      }) {
-        RoundedRectangle(cornerRadius: cornerRadius)
-          .frame(width: frameWidth, height: frameHeight)
-          .overlay(Image(systemName: "pause.fill")
-                    .foregroundColor(.white))
-      }
-      .foregroundColor(.blue)
+//      Spacer()
+//      
+//      Button(action: {
+//        print("Pause")
+//        interface.pause()
+//      }) {
+//        RoundedRectangle(cornerRadius: cornerRadius)
+//          .frame(width: frameWidth, height: frameHeight)
+//          .overlay(Image(systemName: "pause.fill")
+//                    .foregroundColor(.white))
+//      }
+//      .foregroundColor(.blue)
 
       Spacer()
 
@@ -245,7 +245,6 @@ struct ControlButtonsView: View {
   
   private func deleteWorkoutData() {
     interface.reset()
-    interface.heartRateData.removeAll()
   }
   
   // MARK: - Constants
