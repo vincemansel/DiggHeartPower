@@ -90,7 +90,9 @@ class CoreBluetoothManager: NSObject {
   }
   
   func play() {
-    managerState = .running
+    if managerState != .running {
+      managerState = .running
+    }
   }
   
   func pause() {
