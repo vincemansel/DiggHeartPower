@@ -34,13 +34,13 @@ struct HRZonesBarGraphView: View {
         .padding()
         .padding()
       
-      HStack (spacing: 13.5) {
+      HStack (spacing: timeInZoneHorizontalSpacing) {
         ForEach(interface.heartRateZoneData, id: \.self) { zoneData in
           Text(timeInZone(zoneData))
-            .font(Font.system(size: 10, design: .monospaced).monospacedDigit())
+            .font(Font.system(size: timeInZoneFontSize, design: .monospaced).monospacedDigit())
         }
       }
-      .offset(x: 0, y: 40)
+      .offset(x: 0, y: timeInZoneYOffset)
       
     }
     // This enables a bin to grow to hrZoneBinDivisor points before resizing
@@ -75,6 +75,9 @@ struct HRZonesBarGraphView: View {
   // MARK: - Constants
   let columnChartBinOpacity: Double = 0.7
   let columnChartBinSpacing: CGFloat = 5.0
+  let timeInZoneHorizontalSpacing: CGFloat = 13.5
+  let timeInZoneFontSize: CGFloat = 10.0
+  let timeInZoneYOffset: CGFloat = 40.0
 }
 
 struct HRvsTimeGraphView: View {
