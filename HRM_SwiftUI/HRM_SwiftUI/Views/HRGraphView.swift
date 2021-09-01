@@ -8,6 +8,8 @@
 import SwiftUI
 import Charts
 
+// Reference: https://github.com/spacenation/swiftui-charts
+
 fileprivate let backgroundCornerRadius: CGFloat = 15.0
 
 struct HRZonesBarGraphView: View {
