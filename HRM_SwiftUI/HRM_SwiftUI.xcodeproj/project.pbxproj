@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF1EF6DF26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EF6DE26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift */; };
 		AF90925226DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90925126DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift */; };
 		AF90925426DCC11D00B7CAE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90925326DCC11D00B7CAE0 /* ContentView.swift */; };
 		AF90925626DCC11F00B7CAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF90925526DCC11F00B7CAE0 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF1EF6DE26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataComponentFormatterExtension.swift; sourceTree = "<group>"; };
 		AF90924E26DCC11D00B7CAE0 /* HRM_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRM_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF90925126DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_SwiftUIApp.swift; sourceTree = "<group>"; };
 		AF90925326DCC11D00B7CAE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				AF90925F26DCC11F00B7CAE0 /* Info.plist */,
 				AF90925C26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld */,
 				AF90925726DCC11F00B7CAE0 /* Preview Content */,
+				AF1EF6DE26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift */,
 			);
 			path = HRM_SwiftUI;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				AF90925B26DCC11F00B7CAE0 /* Persistence.swift in Sources */,
 				AF90925E26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld in Sources */,
 				AF90929126DF320F00B7CAE0 /* HRGraphView.swift in Sources */,
+				AF1EF6DF26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift in Sources */,
 				AF90928826DE05F900B7CAE0 /* CoreBluetoothManager.swift in Sources */,
 				AF90925426DCC11D00B7CAE0 /* ContentView.swift in Sources */,
 				AF90925226DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift in Sources */,

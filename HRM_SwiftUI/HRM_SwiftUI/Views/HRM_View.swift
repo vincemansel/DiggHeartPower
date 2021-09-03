@@ -113,7 +113,8 @@ struct HeartRateChartsView: View {
 
   var body: some View {
     VStack(spacing: outerVStackSpacing) {
-      Text("Charts")
+      TimerView()
+        .environmentObject(interface)
       
       VStack(spacing: innerVStackSpacing) {
         Group {
@@ -190,4 +191,16 @@ struct ControlButtonsView: View {
   let cornerRadius: CGFloat = 10.0
   let frameWidth: CGFloat = 100.0
   let frameHeight: CGFloat = 60.0
+}
+
+struct TimerView: View {
+  @EnvironmentObject var interface: CBInterface
+  
+  var body: some View {
+    Text(DateComponentsFormatter.formatSecondsToHrMinSec(Float(interface.heartRateData.count/2)))
+      .font(Font.system(size: timeInZoneFontSize, design: .monospaced).monospacedDigit())
+  }
+  
+  let timeInZoneFontSize: CGFloat = 15.0
+
 }

@@ -60,16 +60,7 @@ struct HRZonesBarGraphView: View {
     // convert float x.y to 0:00:00 format
     // TODO: Assume hrTicks per second - need timer (seconds)
     let adjustedZoneData = (zoneData - 1.0)/2.0
-    let formatter = DateComponentsFormatter()
-    formatter.zeroFormattingBehavior = .pad
-    formatter.unitsStyle = .positional
-    formatter.allowedUnits = [.hour, .minute, .second]
-    
-    if let timeFormattedString = formatter.string(from: Double(adjustedZoneData)) {
-      return timeFormattedString
-    }
-    
-    return ""
+    return DateComponentsFormatter.formatSecondsToHrMinSec(adjustedZoneData)
   }
   
   // MARK: - Constants
