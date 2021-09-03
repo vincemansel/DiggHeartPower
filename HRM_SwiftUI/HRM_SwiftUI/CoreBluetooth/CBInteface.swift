@@ -22,7 +22,7 @@ class CBInterface: ObservableObject {
   
   var alreadyStopped: Bool {
     get {
-      manager.managerState == .stopped
+      manager.managerState == .stopped && heartRateData.count != 0
     }
   }
 
