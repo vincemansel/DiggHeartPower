@@ -1,1 +1,1 @@
-# HeartRateMonitor_SwiftUI
+# DiggHeartPower
