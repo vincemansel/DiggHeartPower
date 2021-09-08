@@ -1,6 +1,6 @@
 //
 //  HRGraphView.swift
-//  HRM_SwiftUI
+//  DiggHeartPower
 //
 //  Created by Vince Mansel on 8/31/21.
 //

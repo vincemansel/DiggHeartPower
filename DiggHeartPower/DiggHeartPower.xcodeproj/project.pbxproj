@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AF1EF6DF26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EF6DE26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift */; };
-		AF90925226DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90925126DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift */; };
+		AF90925226DCC11D00B7CAE0 /* DiggHeartPowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90925126DCC11D00B7CAE0 /* DiggHeartPowerApp.swift */; };
 		AF90925426DCC11D00B7CAE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90925326DCC11D00B7CAE0 /* ContentView.swift */; };
 		AF90925626DCC11F00B7CAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF90925526DCC11F00B7CAE0 /* Assets.xcassets */; };
 		AF90925926DCC11F00B7CAE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF90925826DCC11F00B7CAE0 /* Preview Assets.xcassets */; };
 		AF90925B26DCC11F00B7CAE0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90925A26DCC11F00B7CAE0 /* Persistence.swift */; };
 		AF90925E26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF90925C26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodeld */; };
-		AF90926926DCC11F00B7CAE0 /* HRM_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90926826DCC11F00B7CAE0 /* HRM_SwiftUITests.swift */; };
-		AF90927426DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90927326DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift */; };
+		AF90926926DCC11F00B7CAE0 /* DiggHeartPowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90926826DCC11F00B7CAE0 /* DiggHeartPowerTests.swift */; };
+		AF90927426DCC11F00B7CAE0 /* DiggHeartPowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90927326DCC11F00B7CAE0 /* DiggHeartPowerUITests.swift */; };
 		AF90928226DCC79100B7CAE0 /* HRM_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928126DCC79100B7CAE0 /* HRM_View.swift */; };
 		AF90928426DE02B000B7CAE0 /* StatusPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928326DE02B000B7CAE0 /* StatusPickerView.swift */; };
 		AF90928826DE05F900B7CAE0 /* CoreBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928726DE05F900B7CAE0 /* CoreBluetoothManager.swift */; };
@@ -45,7 +45,7 @@
 /* Begin PBXFileReference section */
 		AF1EF6DE26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataComponentFormatterExtension.swift; sourceTree = "<group>"; };
 		AF90924E26DCC11D00B7CAE0 /* DiggHeartPower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiggHeartPower.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF90925126DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_SwiftUIApp.swift; sourceTree = "<group>"; };
+		AF90925126DCC11D00B7CAE0 /* DiggHeartPowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiggHeartPowerApp.swift; sourceTree = "<group>"; };
 		AF90925326DCC11D00B7CAE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF90925526DCC11F00B7CAE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF90925826DCC11F00B7CAE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -53,10 +53,10 @@
 		AF90925D26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HRM_SwiftUI.xcdatamodel; sourceTree = "<group>"; };
 		AF90925F26DCC11F00B7CAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF90926426DCC11F00B7CAE0 /* DiggHeartPowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiggHeartPowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF90926826DCC11F00B7CAE0 /* HRM_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_SwiftUITests.swift; sourceTree = "<group>"; };
+		AF90926826DCC11F00B7CAE0 /* DiggHeartPowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiggHeartPowerTests.swift; sourceTree = "<group>"; };
 		AF90926A26DCC11F00B7CAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF90926F26DCC11F00B7CAE0 /* DiggHeartPowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiggHeartPowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF90927326DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_SwiftUIUITests.swift; sourceTree = "<group>"; };
+		AF90927326DCC11F00B7CAE0 /* DiggHeartPowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiggHeartPowerUITests.swift; sourceTree = "<group>"; };
 		AF90927526DCC11F00B7CAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF90928126DCC79100B7CAE0 /* HRM_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_View.swift; sourceTree = "<group>"; };
 		AF90928326DE02B000B7CAE0 /* StatusPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPickerView.swift; sourceTree = "<group>"; };
@@ -95,9 +95,9 @@
 		AF90924526DCC11D00B7CAE0 = {
 			isa = PBXGroup;
 			children = (
-				AF90925026DCC11D00B7CAE0 /* HRM_SwiftUI */,
-				AF90926726DCC11F00B7CAE0 /* HRM_SwiftUITests */,
-				AF90927226DCC11F00B7CAE0 /* HRM_SwiftUIUITests */,
+				AF90925026DCC11D00B7CAE0 /* DiggHeartPower */,
+				AF90926726DCC11F00B7CAE0 /* DiggHeartPowerTests */,
+				AF90927226DCC11F00B7CAE0 /* DiggHeartPowerUITests */,
 				AF90924F26DCC11D00B7CAE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,10 +112,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AF90925026DCC11D00B7CAE0 /* HRM_SwiftUI */ = {
+		AF90925026DCC11D00B7CAE0 /* DiggHeartPower */ = {
 			isa = PBXGroup;
 			children = (
-				AF90925126DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift */,
+				AF90925126DCC11D00B7CAE0 /* DiggHeartPowerApp.swift */,
 				AF90928526DE059000B7CAE0 /* Views */,
 				AF90928626DE059D00B7CAE0 /* CoreBluetooth */,
 				AF90925326DCC11D00B7CAE0 /* ContentView.swift */,
@@ -126,7 +126,7 @@
 				AF90925726DCC11F00B7CAE0 /* Preview Content */,
 				AF1EF6DE26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift */,
 			);
-			path = HRM_SwiftUI;
+			path = DiggHeartPower;
 			sourceTree = "<group>";
 		};
 		AF90925726DCC11F00B7CAE0 /* Preview Content */ = {
@@ -137,22 +137,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		AF90926726DCC11F00B7CAE0 /* HRM_SwiftUITests */ = {
+		AF90926726DCC11F00B7CAE0 /* DiggHeartPowerTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF90926826DCC11F00B7CAE0 /* HRM_SwiftUITests.swift */,
+				AF90926826DCC11F00B7CAE0 /* DiggHeartPowerTests.swift */,
 				AF90926A26DCC11F00B7CAE0 /* Info.plist */,
 			);
-			path = HRM_SwiftUITests;
+			path = DiggHeartPowerTests;
 			sourceTree = "<group>";
 		};
-		AF90927226DCC11F00B7CAE0 /* HRM_SwiftUIUITests */ = {
+		AF90927226DCC11F00B7CAE0 /* DiggHeartPowerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				AF90927326DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift */,
+				AF90927326DCC11F00B7CAE0 /* DiggHeartPowerUITests.swift */,
 				AF90927526DCC11F00B7CAE0 /* Info.plist */,
 			);
-			path = HRM_SwiftUIUITests;
+			path = DiggHeartPowerUITests;
 			sourceTree = "<group>";
 		};
 		AF90928526DE059000B7CAE0 /* Views */ = {
@@ -319,7 +319,7 @@
 				AF1EF6DF26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift in Sources */,
 				AF90928826DE05F900B7CAE0 /* CoreBluetoothManager.swift in Sources */,
 				AF90925426DCC11D00B7CAE0 /* ContentView.swift in Sources */,
-				AF90925226DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift in Sources */,
+				AF90925226DCC11D00B7CAE0 /* DiggHeartPowerApp.swift in Sources */,
 				AF90928C26DE2A9C00B7CAE0 /* CBInteface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF90926926DCC11F00B7CAE0 /* HRM_SwiftUITests.swift in Sources */,
+				AF90926926DCC11F00B7CAE0 /* DiggHeartPowerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF90927426DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift in Sources */,
+				AF90927426DCC11F00B7CAE0 /* DiggHeartPowerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,10 +479,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_ASSET_PATHS = "\"HRM_SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DiggHeartPower/Preview Content\"";
 				DEVELOPMENT_TEAM = 222587KQHJ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HRM_SwiftUI/Info.plist;
+				INFOPLIST_FILE = DiggHeartPower/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,10 +503,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_ASSET_PATHS = "\"HRM_SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DiggHeartPower/Preview Content\"";
 				DEVELOPMENT_TEAM = 222587KQHJ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HRM_SwiftUI/Info.plist;
+				INFOPLIST_FILE = DiggHeartPower/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -527,14 +527,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 222587KQHJ;
-				INFOPLIST_FILE = HRM_SwiftUITests/Info.plist;
+				INFOPLIST_FILE = DiggHeartPowerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.waveocean.HRM-SwiftUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.waveocean.DiggHeartPowerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -549,14 +549,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 222587KQHJ;
-				INFOPLIST_FILE = HRM_SwiftUITests/Info.plist;
+				INFOPLIST_FILE = DiggHeartPowerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.waveocean.HRM-SwiftUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.waveocean.DiggHeartPowerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -570,17 +570,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 222587KQHJ;
-				INFOPLIST_FILE = HRM_SwiftUIUITests/Info.plist;
+				INFOPLIST_FILE = DiggHeartPowerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.waveocean.HRM-SwiftUIUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.waveocean.DiggHeartPowerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HRM_SwiftUI;
+				TEST_TARGET_NAME = DiggHeartPower;
 			};
 			name = Debug;
 		};
@@ -590,17 +590,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 222587KQHJ;
-				INFOPLIST_FILE = HRM_SwiftUIUITests/Info.plist;
+				INFOPLIST_FILE = DiggHeartPowerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.waveocean.HRM-SwiftUIUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.waveocean.DiggHeartPowerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HRM_SwiftUI;
+				TEST_TARGET_NAME = DiggHeartPower;
 			};
 			name = Release;
 		};

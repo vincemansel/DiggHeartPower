@@ -1,6 +1,6 @@
 //
 //  Persistence.swift
-//  HRM_SwiftUI
+//  DiggHeartPower
 //
 //  Created by Vince Mansel on 8/30/21.
 //
@@ -31,7 +31,7 @@ import CoreData
 //    let container: NSPersistentCloudKitContainer
 //
 //    init(inMemory: Bool = false) {
-//        container = NSPersistentCloudKitContainer(name: "HRM_SwiftUI")
+//        container = NSPersistentCloudKitContainer(name: "DiggHeartPower")
 //        if inMemory {
 //            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
 //        }

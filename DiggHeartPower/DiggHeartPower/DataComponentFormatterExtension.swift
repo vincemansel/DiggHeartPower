@@ -1,6 +1,6 @@
 //
 //  DataComponentFormatterExtension.swift
-//  HRM_SwiftUI
+//  DiggHeartPower
 //
 //  Created by Vince Mansel on 9/3/21.
 //

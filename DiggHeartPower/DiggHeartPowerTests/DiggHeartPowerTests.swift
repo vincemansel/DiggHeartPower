@@ -1,14 +1,14 @@
 //
-//  HRM_SwiftUITests.swift
-//  HRM_SwiftUITests
+//  DiggHeartPowerTests.swift
+//  DiggHeartPowerTests
 //
 //  Created by Vince Mansel on 8/30/21.
 //
 
 import XCTest
-@testable import HRM_SwiftUI
+@testable import DiggHeartPower
 
-class HRM_SwiftUITests: XCTestCase {
+class DiggHeartPowerTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

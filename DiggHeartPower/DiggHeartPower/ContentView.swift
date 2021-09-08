@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  HRM_SwiftUI
+//  DiggHeartPower
 //
 //  Created by Vince Mansel on 8/30/21.
 //
