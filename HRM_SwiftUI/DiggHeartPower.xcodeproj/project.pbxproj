@@ -44,7 +44,7 @@
 
 /* Begin PBXFileReference section */
 		AF1EF6DE26E2D73A0083D6D1 /* DataComponentFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataComponentFormatterExtension.swift; sourceTree = "<group>"; };
-		AF90924E26DCC11D00B7CAE0 /* HRM_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRM_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF90924E26DCC11D00B7CAE0 /* DiggHeartPower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiggHeartPower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF90925126DCC11D00B7CAE0 /* HRM_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_SwiftUIApp.swift; sourceTree = "<group>"; };
 		AF90925326DCC11D00B7CAE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF90925526DCC11F00B7CAE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,10 +52,10 @@
 		AF90925A26DCC11F00B7CAE0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		AF90925D26DCC11F00B7CAE0 /* HRM_SwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HRM_SwiftUI.xcdatamodel; sourceTree = "<group>"; };
 		AF90925F26DCC11F00B7CAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF90926426DCC11F00B7CAE0 /* HRM_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HRM_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF90926426DCC11F00B7CAE0 /* DiggHeartPowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiggHeartPowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF90926826DCC11F00B7CAE0 /* HRM_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_SwiftUITests.swift; sourceTree = "<group>"; };
 		AF90926A26DCC11F00B7CAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF90926F26DCC11F00B7CAE0 /* HRM_SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HRM_SwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF90926F26DCC11F00B7CAE0 /* DiggHeartPowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiggHeartPowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF90927326DCC11F00B7CAE0 /* HRM_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_SwiftUIUITests.swift; sourceTree = "<group>"; };
 		AF90927526DCC11F00B7CAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF90928126DCC79100B7CAE0 /* HRM_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRM_View.swift; sourceTree = "<group>"; };
@@ -105,9 +105,9 @@
 		AF90924F26DCC11D00B7CAE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF90924E26DCC11D00B7CAE0 /* HRM_SwiftUI.app */,
-				AF90926426DCC11F00B7CAE0 /* HRM_SwiftUITests.xctest */,
-				AF90926F26DCC11F00B7CAE0 /* HRM_SwiftUIUITests.xctest */,
+				AF90924E26DCC11D00B7CAE0 /* DiggHeartPower.app */,
+				AF90926426DCC11F00B7CAE0 /* DiggHeartPowerTests.xctest */,
+				AF90926F26DCC11F00B7CAE0 /* DiggHeartPowerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,9 +178,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AF90924D26DCC11D00B7CAE0 /* HRM_SwiftUI */ = {
+		AF90924D26DCC11D00B7CAE0 /* DiggHeartPower */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF90927826DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "HRM_SwiftUI" */;
+			buildConfigurationList = AF90927826DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "DiggHeartPower" */;
 			buildPhases = (
 				AF90924A26DCC11D00B7CAE0 /* Sources */,
 				AF90924B26DCC11D00B7CAE0 /* Frameworks */,
@@ -190,17 +190,17 @@
 			);
 			dependencies = (
 			);
-			name = HRM_SwiftUI;
+			name = DiggHeartPower;
 			packageProductDependencies = (
 				AF90928E26DE633800B7CAE0 /* Charts */,
 			);
 			productName = HRM_SwiftUI;
-			productReference = AF90924E26DCC11D00B7CAE0 /* HRM_SwiftUI.app */;
+			productReference = AF90924E26DCC11D00B7CAE0 /* DiggHeartPower.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AF90926326DCC11F00B7CAE0 /* HRM_SwiftUITests */ = {
+		AF90926326DCC11F00B7CAE0 /* DiggHeartPowerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF90927B26DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "HRM_SwiftUITests" */;
+			buildConfigurationList = AF90927B26DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "DiggHeartPowerTests" */;
 			buildPhases = (
 				AF90926026DCC11F00B7CAE0 /* Sources */,
 				AF90926126DCC11F00B7CAE0 /* Frameworks */,
@@ -211,14 +211,14 @@
 			dependencies = (
 				AF90926626DCC11F00B7CAE0 /* PBXTargetDependency */,
 			);
-			name = HRM_SwiftUITests;
+			name = DiggHeartPowerTests;
 			productName = HRM_SwiftUITests;
-			productReference = AF90926426DCC11F00B7CAE0 /* HRM_SwiftUITests.xctest */;
+			productReference = AF90926426DCC11F00B7CAE0 /* DiggHeartPowerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AF90926E26DCC11F00B7CAE0 /* HRM_SwiftUIUITests */ = {
+		AF90926E26DCC11F00B7CAE0 /* DiggHeartPowerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF90927E26DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "HRM_SwiftUIUITests" */;
+			buildConfigurationList = AF90927E26DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "DiggHeartPowerUITests" */;
 			buildPhases = (
 				AF90926B26DCC11F00B7CAE0 /* Sources */,
 				AF90926C26DCC11F00B7CAE0 /* Frameworks */,
@@ -229,9 +229,9 @@
 			dependencies = (
 				AF90927126DCC11F00B7CAE0 /* PBXTargetDependency */,
 			);
-			name = HRM_SwiftUIUITests;
+			name = DiggHeartPowerUITests;
 			productName = HRM_SwiftUIUITests;
-			productReference = AF90926F26DCC11F00B7CAE0 /* HRM_SwiftUIUITests.xctest */;
+			productReference = AF90926F26DCC11F00B7CAE0 /* DiggHeartPowerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -256,7 +256,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AF90924926DCC11D00B7CAE0 /* Build configuration list for PBXProject "HRM_SwiftUI" */;
+			buildConfigurationList = AF90924926DCC11D00B7CAE0 /* Build configuration list for PBXProject "DiggHeartPower" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -272,9 +272,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AF90924D26DCC11D00B7CAE0 /* HRM_SwiftUI */,
-				AF90926326DCC11F00B7CAE0 /* HRM_SwiftUITests */,
-				AF90926E26DCC11F00B7CAE0 /* HRM_SwiftUIUITests */,
+				AF90924D26DCC11D00B7CAE0 /* DiggHeartPower */,
+				AF90926326DCC11F00B7CAE0 /* DiggHeartPowerTests */,
+				AF90926E26DCC11F00B7CAE0 /* DiggHeartPowerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -345,12 +345,12 @@
 /* Begin PBXTargetDependency section */
 		AF90926626DCC11F00B7CAE0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AF90924D26DCC11D00B7CAE0 /* HRM_SwiftUI */;
+			target = AF90924D26DCC11D00B7CAE0 /* DiggHeartPower */;
 			targetProxy = AF90926526DCC11F00B7CAE0 /* PBXContainerItemProxy */;
 		};
 		AF90927126DCC11F00B7CAE0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AF90924D26DCC11D00B7CAE0 /* HRM_SwiftUI */;
+			target = AF90924D26DCC11D00B7CAE0 /* DiggHeartPower */;
 			targetProxy = AF90927026DCC11F00B7CAE0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -534,7 +534,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HRM_SwiftUI.app/HRM_SwiftUI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiggHeartPower.app/DiggHeartPower";
 			};
 			name = Debug;
 		};
@@ -556,7 +556,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HRM_SwiftUI.app/HRM_SwiftUI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiggHeartPower.app/DiggHeartPower";
 			};
 			name = Release;
 		};
@@ -603,7 +603,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AF90924926DCC11D00B7CAE0 /* Build configuration list for PBXProject "HRM_SwiftUI" */ = {
+		AF90924926DCC11D00B7CAE0 /* Build configuration list for PBXProject "DiggHeartPower" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF90927626DCC11F00B7CAE0 /* Debug */,
@@ -612,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF90927826DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "HRM_SwiftUI" */ = {
+		AF90927826DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "DiggHeartPower" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF90927926DCC11F00B7CAE0 /* Debug */,
@@ -621,7 +621,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF90927B26DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "HRM_SwiftUITests" */ = {
+		AF90927B26DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "DiggHeartPowerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF90927C26DCC11F00B7CAE0 /* Debug */,
@@ -630,7 +630,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF90927E26DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "HRM_SwiftUIUITests" */ = {
+		AF90927E26DCC11F00B7CAE0 /* Build configuration list for PBXNativeTarget "DiggHeartPowerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF90927F26DCC11F00B7CAE0 /* Debug */,

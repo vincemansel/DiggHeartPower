@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AF90924D26DCC11D00B7CAE0"
-               BuildableName = "HRM_SwiftUI.app"
-               BlueprintName = "HRM_SwiftUI"
-               ReferencedContainer = "container:HRM_SwiftUI.xcodeproj">
+               BuildableName = "DiggHeartPower.app"
+               BlueprintName = "DiggHeartPower"
+               ReferencedContainer = "container:DiggHeartPower.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AF90924D26DCC11D00B7CAE0"
-            BuildableName = "HRM_SwiftUI.app"
-            BlueprintName = "HRM_SwiftUI"
-            ReferencedContainer = "container:HRM_SwiftUI.xcodeproj">
+            BuildableName = "DiggHeartPower.app"
+            BlueprintName = "DiggHeartPower"
+            ReferencedContainer = "container:DiggHeartPower.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AF90924D26DCC11D00B7CAE0"
-            BuildableName = "HRM_SwiftUI.app"
-            BlueprintName = "HRM_SwiftUI"
-            ReferencedContainer = "container:HRM_SwiftUI.xcodeproj">
+            BuildableName = "DiggHeartPower.app"
+            BlueprintName = "DiggHeartPower"
+            ReferencedContainer = "container:DiggHeartPower.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
