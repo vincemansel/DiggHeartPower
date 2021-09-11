@@ -525,6 +525,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development: Vince Mansel (MA42KYL9EK)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 222587KQHJ;
 				INFOPLIST_FILE = DiggHeartPowerTests/Info.plist;
@@ -547,6 +548,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: W V Mansel (222587KQHJ)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 222587KQHJ;
 				INFOPLIST_FILE = DiggHeartPowerTests/Info.plist;
