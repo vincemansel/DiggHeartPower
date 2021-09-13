@@ -1,0 +1,83 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Create app on Apple Developer and App Store Connect sites"
+# 2 Names this lane create_app.
+  lane :create_app do
+# 3 Uses produce to add the app to both the Developer Portal and App Store Connect.
+	  produce(
+      username: 'code@vincemansel.com', # Your Apple email address
+      app_identifier: 'com.waveocean.DiggHeartPower', # for automation purpose later
+      app_name: 'Digg Heart Power' # for automation purpose later
+    )
+  end
+
+  # desc "Generate new localized screenshots"
+  # lane :screenshots do
+  #   capture_screenshots(scheme: "DiggHeartPower Snapshot UITests")
+  #   upload_to_app_store(skip_binary_upload: true, skip_metadata: true)
+  # end
+
+  desc "Take screenshots"
+  lane :screenshot do
+    snapshot
+  end
+
+  desc "Create ipa"
+  lane :build do
+    #sync_code_signing
+    enable_automatic_code_signing(path: "DiggHeartPower.xcodeproj")
+    # build_app
+    # upload_to_testflight
+    # 2 Increases the build number by 1
+    # (so each build number is unique per App Store Connect's upload requirement).
+    increment_build_number
+    # 3 Creates a signed .ipa file.
+    gym
+  end
+
+  lane :beta do
+    # sync_code_signing(type: "appstore")    # see code signing guide for more information
+    build_app(scheme: "DiggHeartPower")
+    increment_build_number
+    upload_to_testflight
+    #slack(message: "Successfully distributed a new beta build")
+  end
+
+  desc "Upload to App Store"
+  lane :upload do
+    deliver
+  end
+
+  upload_app_privacy_details_to_app_store(
+    username: "code@vincemansel.com",
+    team_name: "W V Mansel",
+    app_identifier: "com.waveocean.DiggHeartPower",
+    json_path: "fastlane/app_privacy_details.json"
+  )
+  
+  desc "Create app, take screenshots, build and upload to App Store"
+  lane :do_everything do
+    create_app
+    screenshot
+    build
+    upload
+  end
+
+end

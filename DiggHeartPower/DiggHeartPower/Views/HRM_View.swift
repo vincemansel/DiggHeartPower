@@ -149,6 +149,7 @@ struct ControlButtonsView: View {
           .frame(width: frameWidth, height: frameHeight)
           .overlay(Image(systemName: "play.fill")
                     .foregroundColor(.white))
+          .accessibility(identifier: "playButton")
       }
       .foregroundColor(.green)
 
@@ -168,6 +169,7 @@ struct ControlButtonsView: View {
           .frame(width: frameWidth, height: frameHeight)
           .overlay(Image(systemName: "stop.fill")
                     .foregroundColor(.white))
+          .accessibility(identifier: "stopButton")
       }
       .foregroundColor(.red)
       .alert(isPresented: $alreadyStoppedAlert, content: {

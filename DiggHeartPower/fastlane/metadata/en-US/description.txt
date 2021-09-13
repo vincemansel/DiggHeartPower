@@ -1,0 +1,1 @@
+Digg Heart Power is a fitness application that monitors and measures Heart Rate and cycling Power.

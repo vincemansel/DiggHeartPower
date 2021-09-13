@@ -23,6 +23,8 @@
 		AF90928C26DE2A9C00B7CAE0 /* CBInteface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90928B26DE2A9C00B7CAE0 /* CBInteface.swift */; };
 		AF90928F26DE633800B7CAE0 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = AF90928E26DE633800B7CAE0 /* Charts */; };
 		AF90929126DF320F00B7CAE0 /* HRGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90929026DF320E00B7CAE0 /* HRGraphView.swift */; };
+		AFAA04E726ED0BFC00FE6CE2 /* DiggHeartPower_Snapshot_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA04E626ED0BFC00FE6CE2 /* DiggHeartPower_Snapshot_UITests.swift */; };
+		AFAA04EF26ED0C4700FE6CE2 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA04EE26ED0C4700FE6CE2 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = AF90924D26DCC11D00B7CAE0;
 			remoteInfo = HRM_SwiftUI;
+		};
+		AFAA04E926ED0BFC00FE6CE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF90924626DCC11D00B7CAE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF90924D26DCC11D00B7CAE0;
+			remoteInfo = DiggHeartPower;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -64,6 +73,10 @@
 		AF90928926DE0CF500B7CAE0 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 		AF90928B26DE2A9C00B7CAE0 /* CBInteface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBInteface.swift; sourceTree = "<group>"; };
 		AF90929026DF320E00B7CAE0 /* HRGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGraphView.swift; sourceTree = "<group>"; };
+		AFAA04E426ED0BFC00FE6CE2 /* DiggHeartPower Snapshot UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DiggHeartPower Snapshot UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFAA04E626ED0BFC00FE6CE2 /* DiggHeartPower_Snapshot_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiggHeartPower_Snapshot_UITests.swift; sourceTree = "<group>"; };
+		AFAA04E826ED0BFC00FE6CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFAA04EE26ED0C4700FE6CE2 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +102,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFAA04E126ED0BFC00FE6CE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,6 +118,7 @@
 				AF90925026DCC11D00B7CAE0 /* DiggHeartPower */,
 				AF90926726DCC11F00B7CAE0 /* DiggHeartPowerTests */,
 				AF90927226DCC11F00B7CAE0 /* DiggHeartPowerUITests */,
+				AFAA04E526ED0BFC00FE6CE2 /* DiggHeartPower Snapshot UITests */,
 				AF90924F26DCC11D00B7CAE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +129,7 @@
 				AF90924E26DCC11D00B7CAE0 /* DiggHeartPower.app */,
 				AF90926426DCC11F00B7CAE0 /* DiggHeartPowerTests.xctest */,
 				AF90926F26DCC11F00B7CAE0 /* DiggHeartPowerUITests.xctest */,
+				AFAA04E426ED0BFC00FE6CE2 /* DiggHeartPower Snapshot UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +197,16 @@
 			path = CoreBluetooth;
 			sourceTree = "<group>";
 		};
+		AFAA04E526ED0BFC00FE6CE2 /* DiggHeartPower Snapshot UITests */ = {
+			isa = PBXGroup;
+			children = (
+				AFAA04EE26ED0C4700FE6CE2 /* SnapshotHelper.swift */,
+				AFAA04E626ED0BFC00FE6CE2 /* DiggHeartPower_Snapshot_UITests.swift */,
+				AFAA04E826ED0BFC00FE6CE2 /* Info.plist */,
+			);
+			path = "DiggHeartPower Snapshot UITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,6 +266,24 @@
 			productReference = AF90926F26DCC11F00B7CAE0 /* DiggHeartPowerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AFAA04E326ED0BFC00FE6CE2 /* DiggHeartPower Snapshot UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFAA04EB26ED0BFC00FE6CE2 /* Build configuration list for PBXNativeTarget "DiggHeartPower Snapshot UITests" */;
+			buildPhases = (
+				AFAA04E026ED0BFC00FE6CE2 /* Sources */,
+				AFAA04E126ED0BFC00FE6CE2 /* Frameworks */,
+				AFAA04E226ED0BFC00FE6CE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFAA04EA26ED0BFC00FE6CE2 /* PBXTargetDependency */,
+			);
+			name = "DiggHeartPower Snapshot UITests";
+			productName = "DiggHeartPower Snapshot UITests";
+			productReference = AFAA04E426ED0BFC00FE6CE2 /* DiggHeartPower Snapshot UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -245,13 +295,25 @@
 				TargetAttributes = {
 					AF90924D26DCC11D00B7CAE0 = {
 						CreatedOnToolsVersion = 12.5;
+						DevelopmentTeam = 222587KQHJ;
+						ProvisioningStyle = Automatic;
 					};
 					AF90926326DCC11F00B7CAE0 = {
 						CreatedOnToolsVersion = 12.5;
+						DevelopmentTeam = 222587KQHJ;
+						ProvisioningStyle = Automatic;
 						TestTargetID = AF90924D26DCC11D00B7CAE0;
 					};
 					AF90926E26DCC11F00B7CAE0 = {
 						CreatedOnToolsVersion = 12.5;
+						DevelopmentTeam = 222587KQHJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AF90924D26DCC11D00B7CAE0;
+					};
+					AFAA04E326ED0BFC00FE6CE2 = {
+						CreatedOnToolsVersion = 12.5;
+						DevelopmentTeam = 222587KQHJ;
+						ProvisioningStyle = Automatic;
 						TestTargetID = AF90924D26DCC11D00B7CAE0;
 					};
 				};
@@ -266,7 +328,7 @@
 			);
 			mainGroup = AF90924526DCC11D00B7CAE0;
 			packageReferences = (
-				AF90928D26DE633800B7CAE0 /* XCRemoteSwiftPackageReference "swiftui-charts" */,
+				AF90928D26DE633800B7CAE0 /* XCRemoteSwiftPackageReference "swiftui-charts.git" */,
 			);
 			productRefGroup = AF90924F26DCC11D00B7CAE0 /* Products */;
 			projectDirPath = "";
@@ -275,6 +337,7 @@
 				AF90924D26DCC11D00B7CAE0 /* DiggHeartPower */,
 				AF90926326DCC11F00B7CAE0 /* DiggHeartPowerTests */,
 				AF90926E26DCC11F00B7CAE0 /* DiggHeartPowerUITests */,
+				AFAA04E326ED0BFC00FE6CE2 /* DiggHeartPower Snapshot UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,6 +360,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AF90926D26DCC11F00B7CAE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFAA04E226ED0BFC00FE6CE2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -340,6 +410,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFAA04E026ED0BFC00FE6CE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFAA04E726ED0BFC00FE6CE2 /* DiggHeartPower_Snapshot_UITests.swift in Sources */,
+				AFAA04EF26ED0C4700FE6CE2 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -352,6 +431,11 @@
 			isa = PBXTargetDependency;
 			target = AF90924D26DCC11D00B7CAE0 /* DiggHeartPower */;
 			targetProxy = AF90927026DCC11F00B7CAE0 /* PBXContainerItemProxy */;
+		};
+		AFAA04EA26ED0BFC00FE6CE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF90924D26DCC11D00B7CAE0 /* DiggHeartPower */;
+			targetProxy = AFAA04E926ED0BFC00FE6CE2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -477,9 +561,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"DiggHeartPower/Preview Content\"";
 				DEVELOPMENT_TEAM = 222587KQHJ;
 				ENABLE_PREVIEWS = YES;
@@ -491,9 +575,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waveocean.DiggHeartPower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = DiggHeartPowerDevelopmentProfile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -502,9 +586,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"DiggHeartPower/Preview Content\"";
 				DEVELOPMENT_TEAM = 222587KQHJ;
 				ENABLE_PREVIEWS = YES;
@@ -516,9 +600,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waveocean.DiggHeartPower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = DiggHeartPowerDevelopmentProfile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -608,6 +692,44 @@
 			};
 			name = Release;
 		};
+		AFAA04EC26ED0BFC00FE6CE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 222587KQHJ;
+				INFOPLIST_FILE = "DiggHeartPower Snapshot UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waveocean.DiggHeartPower-Snapshot-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiggHeartPower;
+			};
+			name = Debug;
+		};
+		AFAA04ED26ED0BFC00FE6CE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 222587KQHJ;
+				INFOPLIST_FILE = "DiggHeartPower Snapshot UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waveocean.DiggHeartPower-Snapshot-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiggHeartPower;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -647,10 +769,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		AFAA04EB26ED0BFC00FE6CE2 /* Build configuration list for PBXNativeTarget "DiggHeartPower Snapshot UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFAA04EC26ED0BFC00FE6CE2 /* Debug */,
+				AFAA04ED26ED0BFC00FE6CE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AF90928D26DE633800B7CAE0 /* XCRemoteSwiftPackageReference "swiftui-charts" */ = {
+		AF90928D26DE633800B7CAE0 /* XCRemoteSwiftPackageReference "swiftui-charts.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vincemansel/swiftui-charts.git";
 			requirement = {
@@ -663,7 +794,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		AF90928E26DE633800B7CAE0 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AF90928D26DE633800B7CAE0 /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			package = AF90928D26DE633800B7CAE0 /* XCRemoteSwiftPackageReference "swiftui-charts.git" */;
 			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
